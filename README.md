@@ -16,7 +16,6 @@ add the following dependency to your project
 </dependencies>
 ```
 
-
 > - ## Todos
 > - Implement OAuth2 security support
 > - Handle API versions (Multiple Dockets)
