@@ -9,7 +9,7 @@ add the following dependency to your project
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.unicorndz</groupId>
+        <groupId>com.sfeir.qb</groupId>
         <artifactId>swagger-starter</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </dependency>
