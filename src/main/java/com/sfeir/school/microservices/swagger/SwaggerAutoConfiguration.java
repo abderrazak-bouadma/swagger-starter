@@ -48,9 +48,9 @@ public class SwaggerAutoConfiguration {
                 config.getDescription(),
                 config.getVersion(),
                 config.getTermsOfServiceUrl(),
-                contact,
+                contact.toString(),
                 config.getLicense(),
-                config.getLicenseUrl(),null);
+                config.getLicenseUrl());
 
         //noinspection Guava
         return new Docket(DocumentationType.SWAGGER_2)
