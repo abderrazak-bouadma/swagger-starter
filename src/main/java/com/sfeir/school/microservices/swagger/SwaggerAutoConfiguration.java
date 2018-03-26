@@ -19,7 +19,6 @@ import static com.google.common.base.Predicates.not;
 /**
  * Created by Abderrazak BOUADMA
  * on 26/12/2016.
- *
  */
 
 @Configuration
@@ -29,29 +28,29 @@ public class SwaggerAutoConfiguration {
 
     private static final String DEFAULT_INCLUDE_PATTERN = "/.*";
 
-    private final SwaggerConfigurationProperties swaggerConfigurationProperties;
+    private final SwaggerConfigurationProperties config;
 
     @Autowired
-    public SwaggerAutoConfiguration(SwaggerConfigurationProperties swaggerConfigurationProperties) {
-        this.swaggerConfigurationProperties = swaggerConfigurationProperties;
+    public SwaggerAutoConfiguration(SwaggerConfigurationProperties config) {
+        this.config = config;
     }
 
     @Bean
     public Docket unsecuredDocket() {
 
         Contact contact = new Contact(
-                swaggerConfigurationProperties.getContactName(),
-                swaggerConfigurationProperties.getContactUrl(),
-                swaggerConfigurationProperties.getContactEmail());
+                config.getContactName(),
+                config.getContactUrl(),
+                config.getContactEmail());
 
         ApiInfo apiInfo = new ApiInfo(
-                swaggerConfigurationProperties.getTitle(),
-                swaggerConfigurationProperties.getDescription(),
-                swaggerConfigurationProperties.getVersion(),
-                swaggerConfigurationProperties.getTermsOfServiceUrl(),
+                config.getTitle(),
+                config.getDescription(),
+                config.getVersion(),
+                config.getTermsOfServiceUrl(),
                 contact,
-                swaggerConfigurationProperties.getLicense(),
-                swaggerConfigurationProperties.getLicenseUrl());
+                config.getLicense(),
+                config.getLicenseUrl(),null);
 
         //noinspection Guava
         return new Docket(DocumentationType.SWAGGER_2)
